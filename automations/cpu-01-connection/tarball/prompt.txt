@@ -1,0 +1,14 @@
+立即调用终端工具执行以下命令一次：
+
+cd /home/teemo/project/teemo_project/cpu_ai_validation && SUT_SUDO_PASSWORD="$SUT_SUDO_PASSWORD" /root/.cache/uv/archive-v0/OvJCewHopHDXy8xF/bin/python -u scripts/connect_sut.py
+
+必须使用OpenHands内置Secret注入机制处理SUT_SUDO_PASSWORD。
+
+禁止输出密码。
+禁止读取或修改脚本。
+禁止使用Base64绕过Secret脱敏。
+禁止安装依赖。
+禁止自动重试。
+禁止尝试修复任何失败项目。
+
+执行结束后，仅报告实际退出码和测试结果目录，然后立即结束会话。

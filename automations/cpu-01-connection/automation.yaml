@@ -1,0 +1,45 @@
+agent_profile_id: null
+enabled: true
+entrypoint: .venv/bin/python main.py
+keep_alive: null
+model: null
+name: CPU-01-Connection
+observability_associations: null
+preset_metadata:
+  preset_type: prompt
+  prompt: "\u7ACB\u5373\u8C03\u7528\u7EC8\u7AEF\u5DE5\u5177\u6267\u884C\u4EE5\u4E0B\
+    \u547D\u4EE4\u4E00\u6B21\uFF1A\n\ncd /home/teemo/project/teemo_project/cpu_ai_validation\
+    \ && SUT_SUDO_PASSWORD=\"$SUT_SUDO_PASSWORD\" /root/.cache/uv/archive-v0/OvJCewHopHDXy8xF/bin/python\
+    \ -u scripts/connect_sut.py\n\n\u5FC5\u987B\u4F7F\u7528OpenHands\u5185\u7F6ESecret\u6CE8\
+    \u5165\u673A\u5236\u5904\u7406SUT_SUDO_PASSWORD\u3002\n\n\u7981\u6B62\u8F93\u51FA\
+    \u5BC6\u7801\u3002\n\u7981\u6B62\u8BFB\u53D6\u6216\u4FEE\u6539\u811A\u672C\u3002\
+    \n\u7981\u6B62\u4F7F\u7528Base64\u7ED5\u8FC7Secret\u8131\u654F\u3002\n\u7981\u6B62\
+    \u5B89\u88C5\u4F9D\u8D56\u3002\n\u7981\u6B62\u81EA\u52A8\u91CD\u8BD5\u3002\n\u7981\
+    \u6B62\u5C1D\u8BD5\u4FEE\u590D\u4EFB\u4F55\u5931\u8D25\u9879\u76EE\u3002\n\n\u6267\
+    \u884C\u7ED3\u675F\u540E\uFF0C\u4EC5\u62A5\u544A\u5B9E\u9645\u9000\u51FA\u7801\
+    \u548C\u6D4B\u8BD5\u7ED3\u679C\u76EE\u5F55\uFF0C\u7136\u540E\u7ACB\u5373\u7ED3\
+    \u675F\u4F1A\u8BDD\u3002"
+prompt: "\u7ACB\u5373\u8C03\u7528\u7EC8\u7AEF\u5DE5\u5177\u6267\u884C\u4EE5\u4E0B\u547D\
+  \u4EE4\u4E00\u6B21\uFF1A\n\ncd /home/teemo/project/teemo_project/cpu_ai_validation\
+  \ && SUT_SUDO_PASSWORD=\"$SUT_SUDO_PASSWORD\" /root/.cache/uv/archive-v0/OvJCewHopHDXy8xF/bin/python\
+  \ -u scripts/connect_sut.py\n\n\u5FC5\u987B\u4F7F\u7528OpenHands\u5185\u7F6ESecret\u6CE8\
+  \u5165\u673A\u5236\u5904\u7406SUT_SUDO_PASSWORD\u3002\n\n\u7981\u6B62\u8F93\u51FA\
+  \u5BC6\u7801\u3002\n\u7981\u6B62\u8BFB\u53D6\u6216\u4FEE\u6539\u811A\u672C\u3002\
+  \n\u7981\u6B62\u4F7F\u7528Base64\u7ED5\u8FC7Secret\u8131\u654F\u3002\n\u7981\u6B62\
+  \u5B89\u88C5\u4F9D\u8D56\u3002\n\u7981\u6B62\u81EA\u52A8\u91CD\u8BD5\u3002\n\u7981\
+  \u6B62\u5C1D\u8BD5\u4FEE\u590D\u4EFB\u4F55\u5931\u8D25\u9879\u76EE\u3002\n\n\u6267\
+  \u884C\u7ED3\u675F\u540E\uFF0C\u4EC5\u62A5\u544A\u5B9E\u9645\u9000\u51FA\u7801\u548C\
+  \u6D4B\u8BD5\u7ED3\u679C\u76EE\u5F55\uFF0C\u7136\u540E\u7ACB\u5373\u7ED3\u675F\u4F1A\
+  \u8BDD\u3002"
+setup_script_path: setup.sh
+state: ACTIVE
+tarball_executables:
+- setup.sh
+tarball_source:
+  type: internal
+  url: null
+timeout: null
+trigger:
+  schedule: 0 0 1 1 *
+  timezone: Asia/Shanghai
+  type: cron
