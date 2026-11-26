@@ -40,8 +40,65 @@ if [ -n "${AUTOMATION_PHASE_URL:-}" ] && [ -n "$PHASE_TOKEN" ]; then
     curl -sf -m 5 -X POST "$AUTOMATION_PHASE_URL" \
       -H "Authorization: Bearer $PHASE_TOKEN" \
       -H "Content-Type: application/json" \
-      -d '{"phase": "Installing dependencies"}' >/dev/null 2>&1 || true
+      -d '{"phase": "Checking shared runtime"}' >/dev/null 2>&1 || true
 fi
+
+
+# SHARED_DOCKER_RUNTIME_PATCH
+
+SHARED_VENV="/root/.cache/uv/archive-v0/OvJCewHopHDXy8xF"
+SHARED_PYTHON="$SHARED_VENV/bin/python"
+
+echo "[setup] Checking existing Docker runtime"
+
+if [ ! -x "$SHARED_PYTHON" ]; then
+    echo "[setup] ERROR: Shared runtime unavailable" >&2
+    exit 1
+fi
+
+"$SHARED_PYTHON" - "$SDK_VERSION" <<'CHECK'
+import sys
+from importlib.metadata import version
+
+expected = sys.argv[1]
+
+for package in (
+    "openhands-sdk",
+    "openhands-tools",
+    "openhands-workspace"
+):
+    installed = version(package)
+    print(f"[setup] {package}: {installed}")
+
+    if installed != expected:
+        raise SystemExit(
+            f"SDK mismatch: {package}: "
+            f"{installed} != {expected}"
+        )
+CHECK
+
+if [ -L .venv ]; then
+    if [ "$(readlink -f .venv)" != "$SHARED_VENV" ]; then
+        echo "[setup] ERROR: Unexpected venv link" >&2
+        exit 1
+    fi
+elif [ -e .venv ]; then
+    echo "[setup] ERROR: Existing venv directory" >&2
+    exit 1
+else
+    ln -s "$SHARED_VENV" .venv
+fi
+
+if [ ! -x .venv/bin/python ]; then
+    echo "[setup] ERROR: Python unavailable" >&2
+    exit 1
+fi
+
+echo "[setup] Reusing existing Docker runtime"
+echo "[setup] Dependency installation skipped"
+echo "[setup] Done"
+
+exit 0
 
 echo "[setup] Creating isolated virtual environment"
 # <3.14: otherwise uv may pick free-threaded 3.14t, where the SDK fails to install.

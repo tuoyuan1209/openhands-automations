@@ -1,28 +1,5 @@
-立即调用终端工具执行以下命令一次：
+立即调用终端工具执行下列固定命令一次（不要打印或读取Secret）：
 
-cd /home/teemo/project/teemo_project/cpu_ai_validation && SUT_SUDO_PASSWORD="$SUT_SUDO_PASSWORD" /root/.cache/uv/archive-v0/OvJCewHopHDXy8xF/bin/python -u scripts/check_irq.py
+cd /home/teemo/project/teemo_project/cpu_ai_validation && SUT_SUDO_PASSWORD="$SUT_SUDO_PASSWORD" /root/.cache/uv/archive-v0/OvJCewHopHDXy8xF/bin/python -u scripts/run_stage.py 06
 
-固定脚本负责执行中断隔离测试、负载验证、结果判定及证据生成。
-
-无论测试结果为PASS、FAIL、WARN或INCONCLUSIVE，禁止重复执行脚本。
-
-脚本执行完成后，仅根据本次证据目录读取result.json和evidence/nvme_interrupts.json。
-
-输出以下内容：
-
-1. 总体测试结果。
-2. IRQ亲和性异常。
-3. 四个测试场景的隔离核心中断增量。
-4. CPU 6设备IRQ增量。
-5. NVMe中断增量。
-6. 测试证据目录。
-
-禁止修改系统配置。
-禁止修改IRQ亲和性。
-禁止自动修复。
-禁止修改测试脚本。
-禁止修改原始证据。
-禁止输出Secret。
-禁止执行额外测试。
-
-输出简短总结后立即结束任务。
+供应商交付验收模式。不得安装软件、修改配置、迁移IRQ、修改GRUB、重启、启动/关闭虚拟机、自动批准策略或覆盖证据。只允许上述命令一次；不得在失败后重试。若固定脚本拒绝执行，报告原因并结束。不允许用本地容器的数据替代远程SUT数据。根据固定脚本结束行报告阶段、状态、退出码和证据目录；不得伪造PASS。命令执行完即调用finish结束，不追加分析或读取其他目录。

@@ -1,71 +1,38 @@
 agent_profile_id: null
-enabled: true
+enabled: false
 entrypoint: .venv/bin/python main.py
 keep_alive: null
-model: null
+model: qianwen
 name: CPU-03-Isolation
 observability_associations: null
 preset_metadata:
   preset_type: prompt
-  prompt: "\u4F60\u662FLinux CPU\u6838\u5FC3\u9694\u79BB\u6D4B\u8BD5\u5DE5\u7A0B\u5E08\
-    \u3002\n\n\u7ACB\u5373\u8C03\u7528\u7EC8\u7AEF\u5DE5\u5177\u6267\u884C\u4EE5\u4E0B\
-    \u547D\u4EE4\u4E00\u6B21\uFF1A\n\ncd /home/teemo/project/teemo_project/cpu_ai_validation\
-    \ && SUT_SUDO_PASSWORD=\"$SUT_SUDO_PASSWORD\" /root/.cache/uv/archive-v0/OvJCewHopHDXy8xF/bin/python\
-    \ -u scripts/check_isolation.py\n\n\u4F7F\u7528OpenHands\u5185\u7F6ESecret\u6CE8\
-    \u5165\u673A\u5236\u3002\n\n\u672C\u4EFB\u52A1\u8D1F\u8D23\u9A8C\u8BC1\u7269\u7406\
-    \u673ACPU\u6838\u5FC3\u9694\u79BB\u914D\u7F6E\u53CAKVM CPU\u7ED1\u5B9A\u914D\u7F6E\
-    \u3002\n\n\u6D4B\u8BD5\u6807\u51C6\u7531isolation_policy.yaml\u5B9A\u4E49\u3002\
-    \n\n\u6D4B\u8BD5\u7ED3\u679C\u5FC5\u987B\u7531\u56FA\u5B9A\u811A\u672C\u6839\u636E\
-    \u5B9E\u9645\u6570\u636E\u81EA\u52A8\u5224\u5B9A\u3002\n\n\u5982\u679C\u6D4B\u8BD5\
-    \u901A\u8FC7\uFF0C\u76F4\u63A5\u8F93\u51FA\u7ED3\u679C\u3002\n\n\u5982\u679C\u5B58\
-    \u5728FAIL\u3001WARN\u6216INCONCLUSIVE\uFF0C\u8BFB\u53D6\u76F8\u5173\u539F\u59CB\
-    \u8BC1\u636E\uFF0C\u89E3\u91CA\u5B9E\u9645\u503C\u4E0E\u9884\u671F\u503C\u7684\
-    \u5DEE\u5F02\uFF0C\u5E76\u7ED9\u51FA\u4FEE\u590D\u5EFA\u8BAE\u3002\n\n\u7981\u6B62\
-    \u4FEE\u6539\u6D4B\u8BD5\u811A\u672C\u3002\n\u7981\u6B62\u4FEE\u6539\u9A8C\u6536\
-    \u6807\u51C6\u3002\n\u7981\u6B62\u4FEE\u6539GRUB\u3002\n\u7981\u6B62\u4FEE\u6539\
-    CPU\u4EB2\u548C\u6027\u3002\n\u7981\u6B62\u4FEE\u6539IRQ\u4EB2\u548C\u6027\u3002\
-    \n\u7981\u6B62\u4FEE\u6539KVM\u914D\u7F6E\u3002\n\u7981\u6B62\u91CD\u542F\u673A\
-    \u5668\u3002\n\u7981\u6B62\u8F93\u51FASecret\u3002\n\u7981\u6B62\u81EA\u52A8\u4FEE\
-    \u590D\u3002\n\u7981\u6B62\u4F2A\u9020\u6D4B\u8BD5\u7ED3\u679C\u3002\n\u7981\u6B62\
-    \u4FEE\u6539\u539F\u59CB\u6D4B\u8BD5\u8BC1\u636E\u3002\n\n\u6700\u7EC8\u8F93\u51FA\
-    \u4E2D\u6587\u6D4B\u8BD5\u603B\u7ED3\uFF0C\u5305\u542B\u6D4B\u8BD5\u901A\u8FC7\
-    \u6570\u91CF\u3001\u5F02\u5E38\u6570\u91CF\u3001\u5F02\u5E38\u539F\u56E0\u3001\
-    \u4FEE\u590D\u5EFA\u8BAE\u53CA\u6D4B\u8BD5\u8BC1\u636E\u76EE\u5F55\u3002\n\n\u5B8C\
-    \u6210\u540E\u7ACB\u5373\u7ED3\u675F\u4EFB\u52A1\u3002"
-prompt: "\u4F60\u662FLinux CPU\u6838\u5FC3\u9694\u79BB\u6D4B\u8BD5\u5DE5\u7A0B\u5E08\
-  \u3002\n\n\u7ACB\u5373\u8C03\u7528\u7EC8\u7AEF\u5DE5\u5177\u6267\u884C\u4EE5\u4E0B\
-  \u547D\u4EE4\u4E00\u6B21\uFF1A\n\ncd /home/teemo/project/teemo_project/cpu_ai_validation\
-  \ && SUT_SUDO_PASSWORD=\"$SUT_SUDO_PASSWORD\" /root/.cache/uv/archive-v0/OvJCewHopHDXy8xF/bin/python\
-  \ -u scripts/check_isolation.py\n\n\u4F7F\u7528OpenHands\u5185\u7F6ESecret\u6CE8\
-  \u5165\u673A\u5236\u3002\n\n\u672C\u4EFB\u52A1\u8D1F\u8D23\u9A8C\u8BC1\u7269\u7406\
-  \u673ACPU\u6838\u5FC3\u9694\u79BB\u914D\u7F6E\u53CAKVM CPU\u7ED1\u5B9A\u914D\u7F6E\
-  \u3002\n\n\u6D4B\u8BD5\u6807\u51C6\u7531isolation_policy.yaml\u5B9A\u4E49\u3002\n\
-  \n\u6D4B\u8BD5\u7ED3\u679C\u5FC5\u987B\u7531\u56FA\u5B9A\u811A\u672C\u6839\u636E\
-  \u5B9E\u9645\u6570\u636E\u81EA\u52A8\u5224\u5B9A\u3002\n\n\u5982\u679C\u6D4B\u8BD5\
-  \u901A\u8FC7\uFF0C\u76F4\u63A5\u8F93\u51FA\u7ED3\u679C\u3002\n\n\u5982\u679C\u5B58\
-  \u5728FAIL\u3001WARN\u6216INCONCLUSIVE\uFF0C\u8BFB\u53D6\u76F8\u5173\u539F\u59CB\
-  \u8BC1\u636E\uFF0C\u89E3\u91CA\u5B9E\u9645\u503C\u4E0E\u9884\u671F\u503C\u7684\u5DEE\
-  \u5F02\uFF0C\u5E76\u7ED9\u51FA\u4FEE\u590D\u5EFA\u8BAE\u3002\n\n\u7981\u6B62\u4FEE\
-  \u6539\u6D4B\u8BD5\u811A\u672C\u3002\n\u7981\u6B62\u4FEE\u6539\u9A8C\u6536\u6807\
-  \u51C6\u3002\n\u7981\u6B62\u4FEE\u6539GRUB\u3002\n\u7981\u6B62\u4FEE\u6539CPU\u4EB2\
-  \u548C\u6027\u3002\n\u7981\u6B62\u4FEE\u6539IRQ\u4EB2\u548C\u6027\u3002\n\u7981\u6B62\
-  \u4FEE\u6539KVM\u914D\u7F6E\u3002\n\u7981\u6B62\u91CD\u542F\u673A\u5668\u3002\n\u7981\
-  \u6B62\u8F93\u51FASecret\u3002\n\u7981\u6B62\u81EA\u52A8\u4FEE\u590D\u3002\n\u7981\
-  \u6B62\u4F2A\u9020\u6D4B\u8BD5\u7ED3\u679C\u3002\n\u7981\u6B62\u4FEE\u6539\u539F\
-  \u59CB\u6D4B\u8BD5\u8BC1\u636E\u3002\n\n\u6700\u7EC8\u8F93\u51FA\u4E2D\u6587\u6D4B\
-  \u8BD5\u603B\u7ED3\uFF0C\u5305\u542B\u6D4B\u8BD5\u901A\u8FC7\u6570\u91CF\u3001\u5F02\
-  \u5E38\u6570\u91CF\u3001\u5F02\u5E38\u539F\u56E0\u3001\u4FEE\u590D\u5EFA\u8BAE\u53CA\
-  \u6D4B\u8BD5\u8BC1\u636E\u76EE\u5F55\u3002\n\n\u5B8C\u6210\u540E\u7ACB\u5373\u7ED3\
-  \u675F\u4EFB\u52A1\u3002"
+  prompt: '立即调用终端工具执行下列固定命令一次（不要打印或读取Secret）：
+
+
+    cd /home/teemo/project/teemo_project/cpu_ai_validation && SUT_SUDO_PASSWORD="$SUT_SUDO_PASSWORD"
+    /root/.cache/uv/archive-v0/OvJCewHopHDXy8xF/bin/python -u scripts/run_stage.py
+    03
+
+
+    供应商交付验收模式。不得安装软件、修改配置、迁移IRQ、修改GRUB、重启、启动/关闭虚拟机、自动批准策略或覆盖证据。只允许上述命令一次；不得在失败后重试。若固定脚本拒绝执行，报告原因并结束。不允许用本地容器的数据替代远程SUT数据。根据固定脚本结束行报告阶段、状态、退出码和证据目录；不得伪造PASS。命令执行完即调用finish结束，不追加分析或读取其他目录。'
+prompt: '立即调用终端工具执行下列固定命令一次（不要打印或读取Secret）：
+
+
+  cd /home/teemo/project/teemo_project/cpu_ai_validation && SUT_SUDO_PASSWORD="$SUT_SUDO_PASSWORD"
+  /root/.cache/uv/archive-v0/OvJCewHopHDXy8xF/bin/python -u scripts/run_stage.py 03
+
+
+  供应商交付验收模式。不得安装软件、修改配置、迁移IRQ、修改GRUB、重启、启动/关闭虚拟机、自动批准策略或覆盖证据。只允许上述命令一次；不得在失败后重试。若固定脚本拒绝执行，报告原因并结束。不允许用本地容器的数据替代远程SUT数据。根据固定脚本结束行报告阶段、状态、退出码和证据目录；不得伪造PASS。命令执行完即调用finish结束，不追加分析或读取其他目录。'
 setup_script_path: setup.sh
-state: ACTIVE
+state: INACTIVE
 tarball_executables:
 - setup.sh
 tarball_source:
   type: internal
   url: null
-timeout: 600
+timeout: 420
 trigger:
+  type: cron
   schedule: 0 0 1 1 *
   timezone: Asia/Shanghai
-  type: cron

@@ -1,38 +1,6 @@
-你是Linux CPU核心隔离测试环境初始化工程师。
+立即调用终端工具执行下列固定命令一次（不要打印或读取Secret）：
 
-立即调用终端工具执行以下命令一次：
+cd /home/teemo/project/teemo_project/cpu_ai_validation && SUT_SUDO_PASSWORD="$SUT_SUDO_PASSWORD" /root/.cache/uv/archive-v0/OvJCewHopHDXy8xF/bin/python -u scripts/run_stage.py 02
 
-cd /home/teemo/project/teemo_project/cpu_ai_validation && SUT_SUDO_PASSWORD="$SUT_SUDO_PASSWORD" /root/.cache/uv/archive-v0/OvJCewHopHDXy8xF/bin/python -u scripts/provision_all.py
-
-本任务负责被测机器基础环境检查、测试工具安装、实时权限配置、KVM部署、虚拟机初始化及设备IRQ亲和性配置。
-
-所有自动配置操作必须遵循provision_policy.yaml中的授权。
-
-根据isolation_policy.yaml获取普通CPU和隔离CPU范围。
-
-允许固定脚本动态识别覆盖隔离核心的设备IRQ，保存原始亲和性，并按授权迁移至普通核心。
-
-迁移后必须读取effective_affinity_list确认实际生效。
-
-不得写死IRQ编号。
-
-对于内核拒绝迁移的IRQ，保留错误证据并分析原因，禁止强制修改。
-
-已经符合要求的配置直接复用。
-
-禁止修改GRUB。
-禁止自动安装或替换内核。
-禁止重启物理机。
-禁止禁用网络设备。
-禁止删除或覆盖已有虚拟机。
-禁止绕过SSH安全认证。
-禁止输出Secret。
-禁止修改测试脚本及验收标准。
-禁止修改原始测试证据。
-禁止伪造测试结果。
-
-如果存在异常，读取result.json、execution.jsonl、changes.jsonl及相关原始证据，分析原因。
-
-最终输出环境初始化结果、IRQ迁移前后状态、实际迁移数量、失败项目、修复建议及证据目录。
-
-完成后立即结束任务。
+供应商交付验收模式。不得安装软件、修改配置、迁移IRQ、修改GRUB、重启、启动/关闭虚拟机、自动批准策略或覆盖证据。只允许上述命令一次；不得在失败后重试。若固定脚本拒绝执行，报告原因并结束。不允许用本地容器的数据替代远程SUT数据。根据固定脚本结束行报告阶段、状态、退出码和证据目录；不得伪造PASS。命令执行完即调用finish结束，不追加分析或读取其他目录。
+沿用原有CPU-02-Provision名称以兼容Git同步，本版本仅做只读预检。

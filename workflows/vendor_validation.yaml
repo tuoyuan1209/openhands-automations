@@ -1,0 +1,9 @@
+# 项目自己的流程描述，不是 Canvas 原生导入格式；run_stage.py 为实际执行器。
+workflow: vendor_validation_v2
+approval_required: true
+before_approval: ['01','00']
+after_approval: ['01','00','02','03','04','05','06','07','08','09']
+mode: verify_only
+stop_on: [FAIL, INCONCLUSIVE]
+allow_warnings_for: ['03','05','06','07']
+long_test: {stage: '08', duration_s: 3600, execution: persistent_controller_terminal}

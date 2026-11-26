@@ -1,14 +1,5 @@
-立即调用终端工具执行以下命令一次：
+立即调用终端工具执行下列固定命令一次（不要打印或读取Secret）：
 
-cd /home/teemo/project/teemo_project/cpu_ai_validation && SUT_SUDO_PASSWORD="$SUT_SUDO_PASSWORD" /root/.cache/uv/archive-v0/OvJCewHopHDXy8xF/bin/python -u scripts/connect_sut.py
+cd /home/teemo/project/teemo_project/cpu_ai_validation && SUT_SUDO_PASSWORD="$SUT_SUDO_PASSWORD" /root/.cache/uv/archive-v0/OvJCewHopHDXy8xF/bin/python -u scripts/run_stage.py 01
 
-必须使用OpenHands内置Secret注入机制处理SUT_SUDO_PASSWORD。
-
-禁止输出密码。
-禁止读取或修改脚本。
-禁止使用Base64绕过Secret脱敏。
-禁止安装依赖。
-禁止自动重试。
-禁止尝试修复任何失败项目。
-
-执行结束后，仅报告实际退出码和测试结果目录，然后立即结束会话。
+供应商交付验收模式。不得安装软件、修改配置、迁移IRQ、修改GRUB、重启、启动/关闭虚拟机、自动批准策略或覆盖证据。只允许上述命令一次；不得在失败后重试。若固定脚本拒绝执行，报告原因并结束。不允许用本地容器的数据替代远程SUT数据。根据固定脚本结束行报告阶段、状态、退出码和证据目录；不得伪造PASS。命令执行完即调用finish结束，不追加分析或读取其他目录。
