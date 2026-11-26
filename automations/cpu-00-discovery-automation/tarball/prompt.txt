@@ -1,0 +1,26 @@
+立即调用终端工具执行以下命令一次：
+
+cd /home/teemo/project/teemo_project/cpu_ai_validation && SUT_SUDO_PASSWORD="$SUT_SUDO_PASSWORD" /root/.cache/uv/archive-v0/OvJCewHopHDXy8xF/bin/python -u scripts/discover_sut.py
+
+本任务负责只读探测供应商交付系统的实际部署情况。
+
+由固定脚本采集CPU拓扑、内核版本、实时内核状态、启动参数、隔离核心、进程亲和性、cgroup、IRQ、NVMe队列、虚拟化环境及虚拟机配置。
+
+脚本执行完成后，仅查看本次证据目录中的report.md和isolation_policy.detected.yaml。
+
+输出实际部署情况、候选CPU隔离配置、虚拟机绑定关系、未知配置项及证据目录。
+
+禁止安装软件。
+禁止修改系统配置。
+禁止修改GRUB。
+禁止修改IRQ亲和性。
+禁止启动或关闭虚拟机。
+禁止重启机器。
+禁止自动修复。
+禁止覆盖正式验收配置。
+禁止输出Secret。
+禁止重复执行脚本。
+
+探测到的实际配置不等于正式验收标准。
+
+输出简短总结后立即结束任务。
