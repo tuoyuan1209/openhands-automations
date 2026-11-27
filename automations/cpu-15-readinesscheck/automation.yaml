@@ -1,0 +1,38 @@
+agent_profile_id: null
+enabled: false
+entrypoint: .venv/bin/python main.py
+keep_alive: null
+model: qianwen
+name: CPU-15-ReadinessCheck
+observability_associations: null
+preset_metadata:
+  preset_type: prompt
+  prompt: '立即调用终端工具执行以下固定命令一次（不要打印或读取Secret）：
+
+
+    cd /home/teemo/project/teemo_project/cpu_ai_validation && SUT_SUDO_PASSWORD="$SUT_SUDO_PASSWORD"
+    /root/.cache/uv/archive-v0/OvJCewHopHDXy8xF/bin/python -u scripts/run_stage.py
+    15
+
+
+    只读核对指定VM和Guest就绪情况，禁止启动、重启及安装。 不得修改供应商配置、强制关机、安装软件或执行其他命令；不得绕过当前工作流授权。只运行一次固定脚本，依据实际返回和原始证据说明原因并立即finish；不得伪造PASS。'
+prompt: '立即调用终端工具执行以下固定命令一次（不要打印或读取Secret）：
+
+
+  cd /home/teemo/project/teemo_project/cpu_ai_validation && SUT_SUDO_PASSWORD="$SUT_SUDO_PASSWORD"
+  /root/.cache/uv/archive-v0/OvJCewHopHDXy8xF/bin/python -u scripts/run_stage.py 15
+
+
+  只读核对指定VM和Guest就绪情况，禁止启动、重启及安装。 不得修改供应商配置、强制关机、安装软件或执行其他命令；不得绕过当前工作流授权。只运行一次固定脚本，依据实际返回和原始证据说明原因并立即finish；不得伪造PASS。'
+setup_script_path: setup.sh
+state: INACTIVE
+tarball_executables:
+- setup.sh
+tarball_source:
+  type: internal
+  url: null
+timeout: 900
+trigger:
+  type: cron
+  schedule: 0 0 1 1 *
+  timezone: Asia/Shanghai

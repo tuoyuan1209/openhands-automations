@@ -31,7 +31,7 @@ tarball_executables:
 tarball_source:
   type: internal
   url: null
-timeout: 1200
+timeout: 1800
 trigger:
   type: cron
   schedule: 0 0 1 1 *

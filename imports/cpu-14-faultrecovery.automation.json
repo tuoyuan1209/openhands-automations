@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "kind": "automation",
+  "spec": {
+    "name": "CPU-14-FaultRecovery",
+    "trigger": {
+      "type": "schedule",
+      "schedule": "0 0 1 1 *",
+      "timezone": "Asia/Shanghai"
+    },
+    "enabled": false,
+    "prompt": "立即调用终端工具执行以下固定命令一次（不要打印或读取Secret）：\n\ncd /home/teemo/project/teemo_project/cpu_ai_validation && SUT_SUDO_PASSWORD=\"$SUT_SUDO_PASSWORD\" /root/.cache/uv/archive-v0/OvJCewHopHDXy8xF/bin/python -u scripts/run_stage.py 14\n\n读取关联准备证据，采集当前故障诊断，复核Guest；只有明确授权且实际SSH超时时才由固定入口发出一次正常重启请求。 不得修改供应商配置、强制关机、安装软件或执行其他命令；不得绕过当前工作流授权。只运行一次固定脚本，依据实际返回和原始证据说明原因并立即finish；不得伪造PASS。",
+    "model": "qianwen",
+    "timeout": 900
+  }
+}

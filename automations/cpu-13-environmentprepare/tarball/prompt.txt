@@ -1,0 +1,5 @@
+立即调用终端工具执行以下固定命令一次（不要打印或读取Secret）：
+
+cd /home/teemo/project/teemo_project/cpu_ai_validation && SUT_SUDO_PASSWORD="$SUT_SUDO_PASSWORD" /root/.cache/uv/archive-v0/OvJCewHopHDXy8xF/bin/python -u scripts/run_stage.py 13
+
+环境准备模式：固定脚本依据当前工作流独立授权，验证CPU与指定VM持久配置，必要时最多启动一次指定VM，随后有限次只读检查Guest。不得绕过授权、修改供应商配置、重启、强制关机、安装软件或执行其他命令。不得重试固定脚本。根据命令结果报告状态、具体失败原因及证据目录，然后立即finish。不得伪造PASS。

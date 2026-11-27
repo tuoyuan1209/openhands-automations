@@ -11,6 +11,6 @@
     "enabled": false,
     "prompt": "立即调用终端工具执行下列固定命令一次（不要打印或读取Secret）：\n\ncd /home/teemo/project/teemo_project/cpu_ai_validation && SUT_SUDO_PASSWORD=\"$SUT_SUDO_PASSWORD\" /root/.cache/uv/archive-v0/OvJCewHopHDXy8xF/bin/python -u scripts/run_stage.py 07\n\n供应商交付验收模式。不得安装软件、修改配置、迁移IRQ、修改GRUB、重启、启动/关闭虚拟机、自动批准策略或覆盖证据。只允许上述命令一次；不得在失败后重试。若固定脚本拒绝执行，报告原因并结束。不允许用本地容器的数据替代远程SUT数据。根据固定脚本结束行报告阶段、状态、退出码和证据目录；不得伪造PASS。命令执行完即调用finish结束，不追加分析或读取其他目录。",
     "model": "qianwen",
-    "timeout": 1200
+    "timeout": 1800
   }
 }
